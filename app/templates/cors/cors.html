@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <script>
+        function doTest() {
+            document.getElementById("doTest").setAttribute("value", "true");
+            document.getElementById("form").submit();
+        }
+    </script>
+    <center>
+        <h3>CORS跨域资源读取</h3>
+        <hr>
+        <form id="form" method="GET" action="{{url_for('admin.corsHandler')}}">
+            <input type="text" name="url" required lay-verify="required" placeholder="请输入地址" autocomplete="off" class="layui-input" id="input" style="width: 500px;"><br>
+            <input type="hidden" name="data" required lay-verify="required" placeholder="请输入POST数据" autocomplete="off" class="layui-input" id="data" style="width: 500px;"><br>
+            <input name="method" type="radio" value="get" id="gMethod" onclick="document.getElementById('data').type='hidden'"> GET
+            <input name="method" type="radio" value="post" id="pMethod" onclick="document.getElementById('data').type='text'"> POST<br><br>
+            <button type="submit">生成</button>><br><br>
+            <input type="hidden" name="test" value="false" id="doTest">
+        </form>
+        <hr>
+        <h3>PoC Code</h3><br>
+        <textarea placeholder="Code" class="layui-textarea" id="pocText" style="width: 1160px; height: 149px;">{{PocText}}</textarea><br>
+        <!-- <a herf="#" id="pocLink" target="_blank" onclick=doTest()>
+            <font size="3px"></font>
+        </a> -->
+        <button size="3px" onclick=doTest()>> 在线测试</button>
+    </center>
+
+</body>
+
+</html>

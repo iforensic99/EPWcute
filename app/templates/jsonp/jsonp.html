@@ -1,0 +1,22 @@
+<html>
+
+<body>
+    <center>
+        <h3>JSONP劫持</h3>
+        <hr>
+        <form method="get" action='{{url_for("admin.jsonp_test")}}'>
+            <input type="text" name="url" required lay-verify="required" placeholder="请输入地址" autocomplete="off" class="layui-input" id="input" style="width: 500px;"><br>
+            <input type="text" name="cvalue" required lay-verify="required" placeholder="请输入回调值" autocomplete="off" class="layui-input" id="cvalue" style="width: 200px;"><br>
+            <input type="submit" name="submit" value="生成">
+        </form>
+
+        <hr>
+        <h3>PoC Code</h3><br>
+        <textarea placeholder="Code" class="layui-textarea" id="pocText" style="width: 1160px; height: 149px;">{{pocText}}</textarea><br>
+        <a href="#" id="pocLink" target="_blank">
+            <font size="3px">> 在线测试</font>
+        </a>
+    </center>
+</body>
+
+</html>
